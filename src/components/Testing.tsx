@@ -87,14 +87,14 @@ const TestingSummary = () => {
               
               <div className="space-y-6 flex-grow">
                 {[
-                  { label: "Entropy Quality", value: 98, color: "accent" },
-                  { label: "Randomness Score", value: 96, color: "secondary" },
-                  { label: "Quantum Resistance", value: 94, color: "success" },
+                  { label: "Entropy Quality", value: 98, colorClass: "bg-accent-500" },
+                  { label: "Randomness Score", value: 96, colorClass: "bg-secondary-500" },
+                  { label: "Quantum Resistance", value: 94, colorClass: "bg-success-500" },
                 ].map((metric, index) => (
                   <div key={index} className="space-y-2">
                     <div className="flex justify-between">
                       <span>{metric.label}</span>
-                      <span className={`text-${metric.color}-500`}>{metric.value}%</span>
+                      <span className={metric.colorClass.replace('bg-', 'text-')}>{metric.value}%</span>
                     </div>
                     <motion.div 
                       className="h-2 bg-dark-400 rounded-full overflow-hidden"
@@ -103,7 +103,7 @@ const TestingSummary = () => {
                       transition={{ duration: 0.6, delay: 0.5 + index * 0.2 }}
                     >
                       <motion.div 
-                        className={`h-full bg-${metric.color}-500`}
+                        className={`h-full ${metric.colorClass}`}
                         initial={{ width: 0 }}
                         animate={inView ? { width: `${metric.value}%` } : {}}
                         transition={{ duration: 0.8, delay: 0.7 + index * 0.2 }}
