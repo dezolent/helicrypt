@@ -41,7 +41,7 @@ const Creator = () => {
                   transition={{ duration: 0.5, delay: 0.4 }}
                   className="mb-6"
                 >
-                  <div className="w-40 h-40 rounded-full bg-accent-500/10 flex items-center justify-center mb-6">
+                  <div className="w-40 h-40 mx-auto rounded-full bg-accent-500/10 flex items-center justify-center mb-6">
                     <User className="h-20 w-20 text-accent-500" />
                   </div>
                   <h3 className="text-2xl font-bold">Dakota Spencer</h3>
